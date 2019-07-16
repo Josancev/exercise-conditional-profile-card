@@ -701,16 +701,22 @@ __webpack_require__.r(__webpack_exports__);
  *  This function is called every time the user changes types or changes any input
  */
 function render(variables = {}) {
-  // here we ask the logical questions to make decitions on how to build the heml
+  // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+
+  let name = "Lucy";
+  if (variables.name != null) name = variables.name;
+
+  let lastname = "Boilett";
+  if (variables.lastname != null) lastname = variables.lastname;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
+          <h1>${name} ${lastname}</h1>
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
           <ul class="position-right">
@@ -724,7 +730,7 @@ function render(variables = {}) {
 }
 
 /**
- * Ignore this lines below, here is where we do the logic for the dropdowns
+ * Don't change any of the lines below, here is where we do the logic for the dropdowns
  */
 window.onload = function () {
   window.variables = {
@@ -738,7 +744,7 @@ window.onload = function () {
     socialMediaPosition: "left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: "josancev",
     linkedin: null,
     instagram: null,
     name: null,
