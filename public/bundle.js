@@ -712,6 +712,15 @@ function render(variables = {}) {
   let lastname = "Boilett";
   if (variables.lastname != null) lastname = variables.lastname;
 
+  let socialMediaPosition = "right";
+  if (variables.socialMediaPosition == "right") {
+    socialMediaPosition = variables.socialMediaPosition;
+  } else if (socialMediaPosition == "left") {
+    socialMediaPosition = "left";
+  } else {
+    socialMediaPosition = "left";
+  }
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -719,7 +728,7 @@ function render(variables = {}) {
           <h1>${name} ${lastname}</h1>
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
-          <ul class="position-right">
+          <ul class="position-${socialMediaPosition}">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
