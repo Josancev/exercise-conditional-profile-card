@@ -709,8 +709,74 @@ function render(variables = {}) {
   let name = "Lucy";
   if (variables.name != null) name = variables.name;
 
+  let github = "josancev";
+  if (variables.github != null) github = variables.github;
+
   let lastname = "Boilett";
   if (variables.lastname != null) lastname = variables.lastname;
+
+  let linkedin = "";
+  if (variables.linkedin != null) linkedin = variables.linkedin;
+
+  let instagram = "josesan4112";
+  if (variables.instagram != null) instagram = variables.instagram;
+
+  let twitter = "";
+  if (variables.twitter != null) twitter = variables.twitter;
+
+  let city = "undefined";
+  switch (variables.city) {
+    case `Miami`:
+      city = variables.city;
+      break;
+    case `Munich`:
+      city = variables.city;
+      break;
+    case `Caracas`:
+      city = variables.city;
+      break;
+    case `Toronto`:
+      city = variables.city;
+      break;
+    case `null`:
+    default:
+      `undefined`;
+  }
+
+  let country = "undefined";
+  switch (variables.country) {
+    case `USA`:
+      country = variables.country;
+      break;
+    case `Germany`:
+      country = variables.country;
+      break;
+    case `Canada`:
+      country = variables.country;
+      break;
+    case `Venezuela`:
+      country = variables.country;
+      break;
+    case `null`:
+    default:
+      `undefined`;
+  }
+
+  let role = "undefined";
+  switch (variables.role) {
+    case `Web Developer`:
+      role = variables.role;
+      break;
+    case `Floor Planner`:
+      role = variables.role;
+      break;
+    case `Technical Writter`:
+      role = variables.role;
+      break;
+    case `null`:
+    default:
+      `undefined`;
+  }
 
   let socialMediaPosition = "right";
   if (variables.socialMediaPosition == "right") {
@@ -726,13 +792,13 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${name} ${lastname}</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h2>${role}</h2>
+          <h3>${city}, ${country}</h3>
           <ul class="position-${socialMediaPosition}">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${twitter}" target = "_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}" target = "_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedin}" target = "_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}" target= "_blank"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -748,12 +814,12 @@ window.onload = function () {
     // this is the url of the image that will used as background for the profile cover
     background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL: "https://randomuser.me/api/portraits/women/79.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "left",
     // social media usernames
     twitter: null,
-    github: "josancev",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
